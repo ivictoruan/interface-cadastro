@@ -8,12 +8,12 @@ import java.awt.*;
 
 public class Registration extends JFrame {
 
-    private JTextField txtNome;
-    private JTextField txtEmail;
+    private final JTextField txtNome;
+    private final JTextField txtEmail;
 
 
-    public Registration(String Title) {
-        super(Title);
+    public Registration(String title) {
+        super(title);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new FlowLayout());
@@ -44,7 +44,9 @@ public class Registration extends JFrame {
         });
 
         JButton btnFechar = new JButton("Fechar"); // Botão Fechar
-        btnFechar.addActionListener( ( e ) -> System.exit(0) ); // notação lambda: ( coisa ) -> Classe.metodo();
+        btnFechar.addActionListener( ( e ) ->
+                System.exit(0)
+        ); // notação lambda: ( coisa ) -> Classe.metodo();
 
         add(panNome);
         add(panEmail);
